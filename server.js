@@ -7,8 +7,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req,res) => {
-  res.send("Hello there");
-})
+let SearchRoutes = require("./routes/searchRoutes.js");
+app.use("/search", SearchRoutes)
 
 app.listen(PORT)
